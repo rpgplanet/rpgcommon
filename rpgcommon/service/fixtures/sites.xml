@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object pk="1" model="sites.site">
+        <field type="CharField" name="domain">user.rpghrac.cz</field>
+        <field type="CharField" name="name">user.rpghrac.cz</field>
+    </object>
+    <object pk="2" model="sites.site">
+        <field type="CharField" name="domain">www.rpgplanet.cz</field>
+        <field type="CharField" name="name">www.rpgplanet.cz</field>
+    </object>
+    <object pk="3" model="sites.site">
+        <field type="CharField" name="domain">www.rpghrac.cz</field>
+        <field type="CharField" name="name">www.rpgplanet.cz</field>
+    </object>
+    <object pk="4" model="sites.site">
+        <field type="CharField" name="domain">reserved4.rpgplanet.cz</field>
+        <field type="CharField" name="name">reserved4.rpgplanet.cz</field>
+    </object>
+    <object pk="5" model="sites.site">
+        <field type="CharField" name="domain">reserved5.rpgplanet.cz</field>
+        <field type="CharField" name="name">reserved5.rpgplanet.cz</field>
+    </object>
+    <object pk="6" model="sites.site">
+        <field type="CharField" name="domain">reserved6.rpgplanet.cz</field>
+        <field type="CharField" name="name">reserved6.rpgplanet.cz</field>
+    </object>
+    <object pk="7" model="sites.site">
+        <field type="CharField" name="domain">reserved7.rpgplanet.cz</field>
+        <field type="CharField" name="name">reserved7.rpgplanet.cz</field>
+    </object>
+    <object pk="8" model="sites.site">
+        <field type="CharField" name="domain">reserved8.rpgplanet.cz</field>
+        <field type="CharField" name="name">reserved8.rpgplanet.cz</field>
+    </object>
+    <object pk="9" model="sites.site">
+        <field type="CharField" name="domain">reserved9.rpgplanet.cz</field>
+        <field type="CharField" name="name">reserved9.rpgplanet.cz</field>
+    </object>
+    <object pk="10" model="sites.site">
+        <field type="CharField" name="domain">reserved10.rpgplanet.cz</field>
+        <field type="CharField" name="name">reserved10.rpgplanet.cz</field>
+    </object>
+</django-objects>

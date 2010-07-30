@@ -1,0 +1,34 @@
+[
+    {
+        "pk": "2",
+        "model": "auth.user",
+        "fields": {
+            "username": "Almad",
+            "first_name" : "Lukas",
+            "last_name" : "Linhart",
+            "email" : "almad@rpgplanet.cz",
+            "password" : "sha1$111$4ede25ee75d8b156954fc797d0060ef909b47aa5",
+            "is_staff" : "True",
+            "is_superuser" : "True",
+            "last_login" : "2010-01-01 01:00:00",
+            "date_joined" : "2010-01-01 01:00:00"
+        }
+    },
+    {
+        "pk": "11",
+        "model": "sites.site",
+        "fields": {
+            "domain": "almad.rpghrac.cz",
+            "name" : "almad.rpghrac.cz"
+        }
+    },
+    {
+        "pk": "2",
+        "model": "rpgplayer.userprofile",
+        "fields": {
+            "slug": "almad",
+            "user" : "2",
+            "site" : "11"
+        }
+    }
+]
