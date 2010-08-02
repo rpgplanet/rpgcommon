@@ -95,20 +95,12 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.admin',
-    "django.contrib.messages",
-    "django.contrib.humanize",
-    "django.contrib.markup",
 
     # ella-related
 #    'south',
     'ella',
     'ella.core',
     'ella.articles',
-    'ella.newman',
-    'ella.newman.licenses',
-    'ella.photos',
-    'django.contrib.admin',
 
     'djangomarkup',
     'tagging',
@@ -118,15 +110,15 @@ INSTALLED_APPS = (
 
     'rpghrac.service',
     'rpghrac.rpgplayer',
-    'zapisnik',
-
-    # external apps
-    'rpgrules',
-    'rpgext.extcore',
-    'rpgext.drd',
-    'rpgext.strepysnu',
 
 )
+
+
+# debug - find a way to pass it to local.py (how to extend previously defined settings)
+INSTALLED_APPS += (
+    'django_extensions',
+)
+
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
