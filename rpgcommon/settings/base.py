@@ -89,12 +89,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 )
 
-COMBINED_INBOX_COUNT_SOURCES = [
-    "messages.context_processors.inbox",
-    "friends_app.context_processors.invitations",
-    "notification.context_processors.notification",
-]
-
 INSTALLED_APPS = (
     # core django apps
     'django.contrib.auth',
