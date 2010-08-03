@@ -97,10 +97,13 @@ INSTALLED_APPS = (
     'django.contrib.sites',
 
     # ella-related
-#    'south',
+    'south',
     'ella',
     'ella.core',
     'ella.articles',
+
+    #migration wtf
+    'ella.photos',
 
     'djangomarkup',
     'tagging',
