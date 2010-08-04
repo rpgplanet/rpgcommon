@@ -51,16 +51,16 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.load_template_source',
 )
 
-MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    "django.middleware.transaction.TransactionMiddleware",
-
-#    'ella.core.context_processors.url_info',
-
-    'rpgplayer.middleware.SetDomainOwnerMiddleware'
-)
+#MIDDLEWARE_CLASSES = (
+#    'django.middleware.common.CommonMiddleware',
+#    'django.contrib.sessions.middleware.SessionMiddleware',
+#    'django.contrib.auth.middleware.AuthenticationMiddleware',
+#    "django.middleware.transaction.TransactionMiddleware",
+#
+##    'ella.core.context_processors.url_info',
+#
+#    'rpghrac.rpgplayer.middleware.SetDomainOwnerMiddleware'
+#)
 
 ROOT_URLCONF = 'rpgcommon.urls'
 
@@ -84,9 +84,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.request',
     'django.core.context_processors.auth',
-    'ella.newman.context_processors.newman_media',
+#    'ella.newman.context_processors.newman_media',
     'ella.core.context_processors.url_info',
-
+    'rpgcommon.service.context_processors.service_tokens',
 )
 
 INSTALLED_APPS = (
@@ -108,9 +108,14 @@ INSTALLED_APPS = (
     'djangomarkup',
     'tagging',
 
-    # internal apps
+    # internal shared apps
     'rpgcommon.service',
 
+    # rpgplanet
+    'rpgplanet.service',
+    'rpgplanet.betainfo',
+
+    # rpghrac subdomains
     'rpghrac.service',
     'rpghrac.rpgplayer',
 
