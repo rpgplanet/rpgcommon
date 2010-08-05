@@ -9,6 +9,9 @@ django_extensions
 # deployment on mysql only
 mysql-python
 
+# allow setup.py develop without hassle
+paver
+
 # ella deps
 PIL
 
