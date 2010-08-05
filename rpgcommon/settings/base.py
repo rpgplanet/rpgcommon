@@ -87,6 +87,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 #    'ella.newman.context_processors.newman_media',
     'ella.core.context_processors.url_info',
     'rpgcommon.service.context_processors.service_tokens',
+    'rpgcommon.service.context_processors.common_variables',
 )
 
 INSTALLED_APPS = (

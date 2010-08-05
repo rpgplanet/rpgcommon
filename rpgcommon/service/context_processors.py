@@ -5,3 +5,8 @@ def service_tokens(request):
         'facebook_application_id': getattr(settings, 'FACEBOOK_APPLICATION_ID', ''),
         'google_analytics_code' : getattr(settings, 'GOOGLE_ANALYTICS_CODE', ''),
     }
+
+def common_variables(request):
+    return {
+        'STATIC_URL': settings.STATIC_URL
+    }

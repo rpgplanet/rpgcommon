@@ -23,9 +23,12 @@ FILE_ROOT = dirname(rpgcommon.__file__)
 SECRET_KEY = '88b-01f^x$%&^*&(&$)^*(U(8798756786(*bbbBBBndasdf)93!0#k(=mfv$'
 
 
-MEDIA_ROOT = join(FILE_ROOT, 'static')
+MEDIA_ROOT = join(FILE_ROOT, 'media')
+MEDIA_URL = '/media/'
 
-MEDIA_URL = '/static'
+STATIC_ROOT = join(FILE_ROOT, 'static')
+STATIC_URL = '/static/'
+
 
 ADMIN_MEDIA_PREFIX = '/static/admin_media/'
 
@@ -40,17 +43,3 @@ TEST_MEDIA_ROOT = abspath(join(FILE_ROOT, pardir, 'tests', 'data'))
 # should be set to None for production
 TEST_MEDIA_URL = "/test/media/"
 
-DYNAMIC_RPGPLAYER_CATEGORIES = [
-#    {
-#        "tree_path" : "",
-#        "parent_tree_path" : "",
-#        "title" : "",
-#        "slug" : "",
-#    },
-    {
-        "tree_path" : "rpg",
-        "parent_tree_path" : "",
-        "title" : "RPG",
-        "slug" : "rpg",
-    },
-]
