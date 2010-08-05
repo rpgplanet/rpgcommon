@@ -110,6 +110,7 @@ INSTALLED_APPS = (
 
     # internal shared apps
     'rpgcommon.service',
+    'rpgcommon.user',
 
     # rpgplanet
     'rpgplanet.service',
@@ -128,7 +129,9 @@ INSTALLED_APPS += (
 )
 
 
+AUTH_PROFILE_MODULE = 'user.UserProfile'
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 CHERRYPY_TEST_SERVER = True
+
 
