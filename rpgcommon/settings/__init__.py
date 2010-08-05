@@ -27,7 +27,7 @@ from rpgcommon.settings.config import *
 # try to import some settings from /etc/
 try:
     import sys
-    from rpgcommoncommon_config import *
+    from rpgcommon_config import *
 
     del sys.path[0]
 except ImportError:
