@@ -24,19 +24,21 @@ from rpgcommon.settings.base import *
 from rpgcommon.settings.config import *
 
 
-# try to import some settings from /etc/
-try:
-    import sys
-    from rpgcommon_config import *
+# try to import some settings from $venv/../etc/
+import sys
+from os.path import abspath, dirname, join, pardir
 
-    del sys.path[0]
+sys.path.insert(0, abspath(join(dirname(__file__), pardir, pardir, pardir, pardir, 'etc')))
+try:
+    from rpgcommon_config import *
 except ImportError:
     pass
+
+del sys.path[0]
 
 # load any settings for local development
 try:
     from rpgcommon.settings.local import *
-
 except ImportError:
     pass
 
