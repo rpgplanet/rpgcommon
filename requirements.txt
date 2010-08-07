@@ -17,7 +17,7 @@ PIL
 
 git+http://github.com/Almad/sneakylang.git#egg=sneakylang
 git+http://github.com/Almad/python-czechtile.git#egg=czechtile
-git+http://github.com/rpgplanet/ella.git@rpgplanet#egg=ella
+git+http://github.com/rpgplanet/ella.git#egg=ella
 git+http://github.com/ella/django-markup.git#egg=djangomarkup
 
 markdown2
