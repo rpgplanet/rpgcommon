@@ -96,6 +96,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'django.contrib.admin',
 
     # ella-related
     'south',
@@ -105,6 +106,9 @@ INSTALLED_APPS = (
 
     #migration wtf
     'ella.photos',
+
+    # semi-required by ella, WTF
+    'ella.newman',
 
     'djangomarkup',
     'tagging',
