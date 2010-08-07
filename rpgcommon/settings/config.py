@@ -43,3 +43,4 @@ TEST_MEDIA_ROOT = abspath(join(FILE_ROOT, pardir, 'tests', 'data'))
 # should be set to None for production
 TEST_MEDIA_URL = "/test/media/"
 
+NEWMAN_MEDIA_PREFIX = '/settings/newman_media/'
