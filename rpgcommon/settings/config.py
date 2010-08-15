@@ -41,3 +41,5 @@ TEST_MEDIA_ROOT = abspath(join(FILE_ROOT, pardir, 'tests', 'data'))
 TEST_MEDIA_URL = "/test/media/"
 
 NEWMAN_MEDIA_PREFIX = '/settings/newman_media/'
+
+LOGGING_CONFIG_FILE = join(dirname(__file__), 'logging.ini')
