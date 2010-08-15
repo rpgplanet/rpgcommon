@@ -130,10 +130,17 @@ INSTALLED_APPS += (
     'django_extensions',
 )
 
-
 AUTH_PROFILE_MODULE = 'user.UserProfile'
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 CHERRYPY_TEST_SERVER = True
 
 SKIP_SOUTH_TESTS = True
+
+DEFAULT_MARKUP = 'czechtile'
+DJANGO_MARKUP_ENABLE_REGISTER_ON_IMPORT = False
+
+DJANGO_MARKUP_REGISTERED_FIELDS = [
+    ('articles', 'article', 'description'),
+    ('articles', 'articlecontents', 'content'),
+]
