@@ -8,13 +8,10 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ENABLE_DEBUG_URLS = DEBUG
 
-DATABASE_ENGINE = 'sqlite3'
-DATABASE_NAME = join(gettempdir(), 'rpgplanet.db')
-TEST_DATABASE_NAME = join(gettempdir(), 'rpgplanetdb.db')
-DATABASE_USER = ''
-DATABASE_PASSWORD = ''
-DATABASE_HOST = ''
-DATABASE_PORT = ''
+DATABASE_ENGINE="mysql"
+DATABASE_NAME="rpgplanet"
+DATABASE_USER="developer"
+DATABASE_PASSWORD="xxx"
 
 FILE_ROOT = dirname(rpgcommon.__file__)
 
