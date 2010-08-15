@@ -136,4 +136,4 @@ MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 CHERRYPY_TEST_SERVER = True
 
-
+SKIP_SOUTH_TESTS = True

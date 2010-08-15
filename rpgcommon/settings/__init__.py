@@ -14,7 +14,7 @@ Thus, we're changing module into package:
 """
 
 # logging init - this options should be overriden somewhere
-LOGGING_CONFIG_FILE = None
+LOGGING_CONFIG_FILE = 'logging.ini'
 
 # load base configuration for whole app
 from rpgcommon.settings.base import *
@@ -39,6 +39,13 @@ del sys.path[0]
 # load any settings for local development
 try:
     from rpgcommon.settings.local import *
+except ImportError:
+    pass
+
+# south is setting logging on import-time; import it before setting our logger
+# so it is not overwriting our settings
+try:
+    import south.logger
 except ImportError:
     pass
 
