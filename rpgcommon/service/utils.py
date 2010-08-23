@@ -21,9 +21,9 @@ def unixize_name(name):
     """ Return name in unix format (= national characters and special chars stripped) """
     unixname = undiacritic(name)
     unixname = unixname.lower()
-    unixname = re.sub("[ ]", "_", unixname)
+    unixname = re.sub("[ ]", "-", unixname)
     unixname = re.sub("([-]+)", "-", unixname)
-    unixname = re.sub("([_]+)", "_", unixname)
+    unixname = re.sub("([_]+)", "-", unixname)
     unixname = re.sub("^([^a-z])+", "", unixname)
     unixname = re.sub("([^a-z]+)$", "", unixname)
     return unixname
