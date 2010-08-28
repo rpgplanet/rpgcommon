@@ -1,8 +1,4 @@
-from django.contrib.sites.models import Site
-from django.http import Http404
 from django.conf import settings
-
-from urlparse import urlparse
 
 import facebook
 
