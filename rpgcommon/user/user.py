@@ -67,5 +67,5 @@ def fb_logout(cookies, response):
         
         args['sig'] = md5(payload+settings.FACEBOOK_APPLICATION_SECRET).hexdigest()
 
-        response.set_cookie('fbs_%s' % settings.FACEBOOK_APPLICATION_ID , urlencode(args), expires=expire_time)
+        response.set_cookie('fbs_%s' % settings.FACEBOOK_APPLICATION_ID , urlencode(args), expires=expire_time, domain=settings.SESSION_COOKIE_DOMAIN)
 

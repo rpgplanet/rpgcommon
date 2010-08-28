@@ -25,4 +25,3 @@ class FbAutoLoginMiddleware:
                     if user and user.is_active:
                         login(request, user)
 
-            
