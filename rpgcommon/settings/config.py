@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from tempfile import gettempdir
 from os.path import dirname, join, pardir, abspath
 
 import rpgcommon
@@ -40,6 +39,5 @@ TEST_MEDIA_ROOT = abspath(join(FILE_ROOT, pardir, 'tests', 'data'))
 # should be set to None for production
 TEST_MEDIA_URL = "/test/media/"
 
-NEWMAN_MEDIA_PREFIX = '/settings/newman_media/'
-
 LOGGING_CONFIG_FILE = join(dirname(__file__), 'logging.ini')
+

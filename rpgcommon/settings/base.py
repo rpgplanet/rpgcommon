@@ -68,12 +68,6 @@ TEMPLATE_DIRS = (
     join(dirname(rpgcommon.__file__), 'templates'),
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.media',
-    'django.core.context_processors.auth',
-    'django.core.context_processors.request',
-)
-
 SOUTH_AUTO_FREEZE_APP = True
 SKIP_SOUTH_TESTS = True
 
