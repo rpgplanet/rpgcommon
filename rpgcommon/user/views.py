@@ -126,9 +126,7 @@ def inviteform(request, template='registration/inviteform.html'):
                                 setattr(account, model_key, fb_info[fb_key])
 
                             account.expires = datetime.utcfromtimestamp(float(fb_info['expires']))
-
                             account.set_json_data(profile)
-
                             account.save()
 
                             return HttpResponseRedirect(reverse('service:profile', kwargs={
