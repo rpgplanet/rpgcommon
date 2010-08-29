@@ -8,11 +8,19 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 
+from ella.core.models import Category
+
 import facebook
 
 from rpgcommon.user.models import UserProfile
 from rpgcommon.service.utils import unixize_name
 
+# categories that will be created immediatelly after user creation
+# they MUST be given in order of dependence ("rpg" first, "rpg/drd" second).
+# "" (root category) is automagic
+DEFAULT_USER_MANDATORY_CATEGORIES = [
+    "rpg"
+]
 
 def create_user(username, password, email):
     user = User.objects.create_user(
@@ -35,6 +43,28 @@ def create_user(username, password, email):
         user = user,
         site = site
     )
+
+
+    # hm, rpgcommon shall not depend on rpghrac...
+    from rpghrac.zapisnik.zapisnik import Zapisnik
+    zapisnik = Zapisnik(owner=user, site=site)
+    root = zapisnik.root_category
+
+    categories = [cat for cat in settings.DYNAMIC_RPGPLAYER_CATEGORIES if cat['tree_path'] in getattr(settings, "USER_MANDATORY_DYNAMIC_CATEGORIES", None) or DEFAULT_USER_MANDATORY_CATEGORIES]
+
+    for category_dict in categories:
+        if category_dict['tree_path']:
+            parent = root
+        else:
+            Category.objects.get(tree_path=category_dict['tree_path'])
+            
+        Category.objects.create(
+            site = site,
+            tree_path = category_dict['tree_path'],
+            tree_parent = parent,
+            title = category_dict['title'],
+            slug = category_dict['slug']
+        )
 
     return user
 
