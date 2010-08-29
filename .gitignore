@@ -1,2 +1,8 @@
 *.py[c|o]
 /rpgcommon/settings/local.py
+/rpgcommon/media
+*.egg
+*.egg-info
+freezed-requirements.txt
+/nbproject
+
