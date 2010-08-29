@@ -23,6 +23,18 @@ DEFAULT_USER_MANDATORY_CATEGORIES = [
 ]
 
 def create_user(username, password, email):
+    try:
+        User.objects.get(email=email)
+        raise ValueError("Email %s already registered" % email)
+    except User.DoesNotExist:
+        pass
+
+    try:
+        UserProfile.objects.get(slug=unixize_name(username))
+        raise ValueError("Nickname %s already taken (short name is %s)" % (username, unixize_name(username)))
+    except UserProfile.DoesNotExist:
+        pass
+
     user = User.objects.create_user(
         username = username,
         email = email,
