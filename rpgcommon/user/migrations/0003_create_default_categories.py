@@ -23,7 +23,7 @@ class Migration(DataMigration):
                 else:
                     orm['core.Category'].objects.get(tree_path=category_dict['tree_path'])
 
-                orm['core.Category'].objects.create(
+                orm['core.Category'].objects.get_or_create(
                     site = user.get_profile().site,
                     tree_path = category_dict['tree_path'],
                     tree_parent = parent,
