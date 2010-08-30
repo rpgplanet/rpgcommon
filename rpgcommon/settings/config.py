@@ -27,7 +27,7 @@ STATIC_URL = '/static/'
 
 
 ADMIN_MEDIA_PREFIX = '/static/admin_media/'
-
+NEWMAN_MEDIA_PREFIX = '/static/newman_media/'
 
 # init logger
 LOGGING_CONFIG_FILE = join(FILE_ROOT, 'settings', 'logging.ini')
