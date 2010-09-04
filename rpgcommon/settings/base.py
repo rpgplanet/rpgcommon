@@ -85,6 +85,7 @@ INSTALLED_APPS = (
     # rpghrac subdomains
     'rpghrac.service',
     'rpghrac.rpgplayer',
+    'rpghrac.zapisnik',
 
 )
 
