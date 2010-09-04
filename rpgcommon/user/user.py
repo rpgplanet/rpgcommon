@@ -65,10 +65,10 @@ def create_user(username, password, email):
     categories = [cat for cat in settings.DYNAMIC_RPGPLAYER_CATEGORIES if cat['tree_path'] in getattr(settings, "USER_MANDATORY_DYNAMIC_CATEGORIES", None) or DEFAULT_USER_MANDATORY_CATEGORIES]
 
     for category_dict in categories:
-        if category_dict['tree_path']:
+        if not category_dict['parent_tree_path']:
             parent = root
         else:
-            Category.objects.get(tree_path=category_dict['tree_path'])
+            parent = Category.objects.get(tree_path=category_dict['parent_tree_path'])
             
         Category.objects.create(
             site = site,
