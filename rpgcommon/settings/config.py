@@ -265,7 +265,7 @@ DYNAMIC_RPGPLAYER_CATEGORIES = [
     {
         "tree_path" : "rpg/dnd3/rest/beletrie",
         "parent_tree_path" : "rpg/dnd3/rest",
-        "title" : u"Beletrie v Dnd",
+        "title" : u"Beletrie v DnD",
         "slug" : "beletrie",
     },
 ]
