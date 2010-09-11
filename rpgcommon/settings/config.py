@@ -25,6 +25,7 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = join(FILE_ROOT, 'static')
 STATIC_URL = '/static/'
 
+AVATAR_GRAVATAR_BACKUP = False
 
 ADMIN_MEDIA_PREFIX = '/static/admin_media/'
 NEWMAN_MEDIA_PREFIX = '/static/newman_media/'
