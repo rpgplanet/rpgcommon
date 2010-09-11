@@ -5,7 +5,6 @@ import warnings
 
 from django.conf import settings
 from django.core.urlresolvers import reverse
-from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 
 from django.forms import (
@@ -14,26 +13,43 @@ from django.forms import (
     PasswordInput
 )
 
+from django.contrib.auth.models import User
+
 from django.views.generic.simple import direct_to_template
 
 import facebook
 
-from rpgcommon.user.models import InvitedEmail, FacebookAccount
-from rpgcommon.user.user import create_user
+from rpgcommon.user.admin import UserCreationForm
+from rpgcommon.user.models import InvitedEmail, FacebookAccount, UserProfile
+from rpgcommon.user.user import create_user, unixize_name
 
 
-class RegistrationForm(Form):
-    username = CharField(label="Uživatelské jméno", max_length=30)
+class RegistrationForm(UserCreationForm):
     email = EmailField()
-    password = CharField(label="Heslo", widget=PasswordInput)
-    password_confirm = CharField(label="Potvrzení hesla", widget=PasswordInput)
+
+    def __init__(self, *args, **kwargs):
+        super(RegistrationForm, self).__init__(*args, **kwargs)
+        self.fields.keyOrder = ['username', 'email', 'password1', 'password2']
+
+    def clean_username(self):
+        username = self.cleaned_data['username']
+        try:
+            User.objects.get(username=username)
+        except User.DoesNotExist:
+            try:
+                # check for the subdomain as well
+                UserProfile.objects.get(slug=unixize_name(username))
+            except UserProfile.DoesNotExist:
+                return username
+
+        raise ValidationError(u"Uživatel s tímto jménem již existuje.")
 
     def clean_email(self):
-        email = self.cleaned_data.get("email", "")
+        email = self.cleaned_data['email']
 
         try:
             User.objects.get(email=email)
-            raise ValidationError("Tento e-mail je již registrován")
+            raise ValidationError(u"Uživatel s touto e-mailovou adresou již existuje.")
         except User.DoesNotExist:
             pass
 
@@ -44,18 +60,6 @@ class RegistrationForm(Form):
 
         return email
         
-    def clean_password_confirm(self):
-        password = self.cleaned_data.get("password", "")
-        password_confirm = self.cleaned_data["password_confirm"]
-        if password != password_confirm:
-            raise ValidationError("Hesla nejsou stejná. Prosím, upravte svůj překlep.")
-        return password_confirm
-
-    def clean_username(self):
-        #TODO
-        return self.cleaned_data.get("username", "")
-
-
 class FacebookForm(Form):
     username = CharField(label="Uživatelské jméno", max_length=30)
 
