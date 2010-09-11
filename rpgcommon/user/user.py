@@ -62,7 +62,7 @@ def create_user(username, password, email):
     zapisnik = Zapisnik(owner=user, site=site)
     root = zapisnik.root_category
 
-    categories = [cat for cat in settings.DYNAMIC_RPGPLAYER_CATEGORIES if cat['tree_path'] in getattr(settings, "USER_MANDATORY_DYNAMIC_CATEGORIES", None) or DEFAULT_USER_MANDATORY_CATEGORIES]
+    categories = [cat for cat in settings.DYNAMIC_RPGPLAYER_CATEGORIES if cat['tree_path'] in (getattr(settings, "USER_MANDATORY_DYNAMIC_CATEGORIES", None) or DEFAULT_USER_MANDATORY_CATEGORIES)]
 
     for category_dict in categories:
         if not category_dict['parent_tree_path']:
