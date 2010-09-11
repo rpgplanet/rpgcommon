@@ -1,8 +1,12 @@
 # encoding: utf-8
 import datetime
+import logging
+
 from south.db import db
 from south.v2 import DataMigration
 from django.db import models
+
+logger = logging.getLogger("rpgcommon.user.migrations")
 
 class Migration(DataMigration):
 
@@ -10,26 +14,34 @@ class Migration(DataMigration):
         from django.conf import settings
         from django.contrib.auth.models import User
         from rpghrac.zapisnik.zapisnik import Zapisnik
+        from rpgcommon.user.models import UserProfile
+
 
         for user in User.objects.all():
-            zapisnik = Zapisnik(owner=user, site=user.get_profile().site)
-            root = zapisnik.root_category
 
-            categories = [cat for cat in settings.DYNAMIC_RPGPLAYER_CATEGORIES if cat['tree_path'] in getattr(settings, "USER_MANDATORY_DYNAMIC_CATEGORIES", [])]
+            try:
+                profile = user.get_profile()
+            except UserProfile.DoesNotExist:
+                logger.fatal("User %s without profile! This should never happen: check your database for explosives and fix it!" % str(user))
+            else:
+                zapisnik = Zapisnik(owner=user, site=profile.site)
+                root = zapisnik.root_category
 
-            for category_dict in categories:
-                if category_dict['tree_path']:
-                    parent = root
-                else:
-                    orm['core.Category'].objects.get(tree_path=category_dict['tree_path'])
+                categories = [cat for cat in settings.DYNAMIC_RPGPLAYER_CATEGORIES if cat['tree_path'] in getattr(settings, "USER_MANDATORY_DYNAMIC_CATEGORIES", [])]
 
-                orm['core.Category'].objects.get_or_create(
-                    site = user.get_profile().site,
-                    tree_path = category_dict['tree_path'],
-                    tree_parent = parent,
-                    title = category_dict['title'],
-                    slug = category_dict['slug']
-                )
+                for category_dict in categories:
+                    if category_dict['tree_path']:
+                        parent = root
+                    else:
+                        orm['core.Category'].objects.get(tree_path=category_dict['tree_path'])
+
+                    orm['core.Category'].objects.get_or_create(
+                        site = profile.site,
+                        tree_path = category_dict['tree_path'],
+                        tree_parent = parent,
+                        title = category_dict['title'],
+                        slug = category_dict['slug']
+                    )
 
 
 
