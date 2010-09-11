@@ -217,7 +217,7 @@ DYNAMIC_RPGPLAYER_CATEGORIES = [
         "tree_path" : "rpg/drd2",
         "parent_tree_path" : "rpg",
         "title" : u"Dračí Doupě II",
-        "slug" : "draci-doupe-2",
+        "slug" : "drd2",
     },
 
 
