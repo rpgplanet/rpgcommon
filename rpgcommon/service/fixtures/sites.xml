@@ -13,8 +13,8 @@
         <field type="CharField" name="name">www.rpgplanet.cz</field>
     </object>
     <object pk="4" model="sites.site">
-        <field type="CharField" name="domain">reserved4.rpgplanet.cz</field>
-        <field type="CharField" name="name">reserved4.rpgplanet.cz</field>
+        <field type="CharField" name="domain">akce.rpgplanet.cz</field>
+        <field type="CharField" name="name">akce.rpgplanet.cz</field>
     </object>
     <object pk="5" model="sites.site">
         <field type="CharField" name="domain">reserved5.rpgplanet.cz</field>
