@@ -146,3 +146,22 @@ def inviteform(request, template='registration/inviteform.html'):
         'fb_form' : fb_form,
         'message' : message,
     })
+
+
+
+def logout(request, template='logout.html'):
+    from rpgcommon.user.user import logout, fb_logout
+
+    logout(request=request)
+
+    response = direct_to_template(request, template, {})
+
+    fb_logout(cookies=request.COOKIES, response=response)
+
+    return response
+
+from django.contrib.auth.views import login as django_login
+
+def login(request):
+    res = django_login(request)
+    return res
