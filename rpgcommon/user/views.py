@@ -61,7 +61,7 @@ class RegistrationForm(UserCreationForm):
         return email
         
 class FacebookForm(Form):
-    username = CharField(label="Uživatelské jméno", max_length=30)
+    rpgp_username = CharField(label="Uživatelské jméno", max_length=30)
 
 def inviteform(request, template='registration/inviteform.html'):
     message = ''
@@ -71,7 +71,7 @@ def inviteform(request, template='registration/inviteform.html'):
         if registration_form.is_valid():
             user = create_user(
                 username = registration_form.cleaned_data['username'],
-                password = registration_form.cleaned_data['password'],
+                password = registration_form.cleaned_data['password1'],
                 email = registration_form.cleaned_data['email']
             )
 
@@ -111,7 +111,7 @@ def inviteform(request, template='registration/inviteform.html'):
                         else:
                             # finally, we can create profile
                             user = create_user(
-                                username = fb_form.cleaned_data['username'],
+                                username = fb_form.cleaned_data['rpgp_username'],
                                 password = '',
                                 email = profile['email']
                             )

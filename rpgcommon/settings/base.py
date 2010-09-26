@@ -82,6 +82,10 @@ INSTALLED_APPS = (
     'rpgplanet.service',
     'rpgplanet.betainfo',
 
+    # rpgplanet con app
+    'ellaschedule',
+    'rpgscheduler.convention',
+
     # rpghrac subdomains
     'rpghrac.service',
     'rpghrac.rpgplayer',
