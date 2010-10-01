@@ -113,3 +113,9 @@ DJANGO_MARKUP_REGISTERED_FIELDS = [
     ('articles', 'article', 'description'),
     ('articles', 'articlecontents', 'content'),
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'rpgcommon.user.backends.FacebookBackend',
+)
+
