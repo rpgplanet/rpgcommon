@@ -112,6 +112,7 @@ DJANGO_MARKUP_ENABLE_REGISTER_ON_IMPORT = False
 DJANGO_MARKUP_REGISTERED_FIELDS = [
     ('articles', 'article', 'description'),
     ('articles', 'articlecontents', 'content'),
+    ('ellaschedule', 'event', 'description'),
 ]
 
 AUTHENTICATION_BACKENDS = (
