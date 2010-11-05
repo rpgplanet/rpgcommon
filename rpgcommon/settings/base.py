@@ -57,7 +57,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.redirects',
-    
+
     # ella-related
     'south',
     'ella',
@@ -74,6 +74,9 @@ INSTALLED_APPS = (
     'djangomarkup',
     'tagging',
     'avatar',
+
+    # gabbling & mumbling
+    'esus.phorum',
 
     # internal shared apps
     'rpgcommon.service',
