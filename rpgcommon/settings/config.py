@@ -207,6 +207,25 @@ DYNAMIC_RPGPLAYER_CATEGORIES = [
     },
 
     {
+        "tree_path" : "rpg/draci-doupe/dovednosti",
+        "parent_tree_path" : "rpg/draci-doupe",
+        "title" : u"Dovednosti",
+        "slug" : "dovednosti",
+    },
+    {
+        "tree_path" : "rpg/draci-doupe/predmety",
+        "parent_tree_path" : "rpg/draci-doupe",
+        "title" : u"Předměty",
+        "slug" : "predmety",
+    },
+    {
+        "tree_path" : "rpg/draci-doupe/bestiar",
+        "parent_tree_path" : "rpg/draci-doupe",
+        "title" : u"Bestiář",
+        "slug" : "bestiar",
+    },
+
+    {
         "tree_path" : "rpg/draci-doupe-plus",
         "parent_tree_path" : "rpg",
         "title" : u"Dračí Doupě+",
