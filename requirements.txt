@@ -24,6 +24,8 @@ git+http://github.com/rpgplanet/ella.git#egg=ella
 git+http://github.com/rpgplanet/django-markup.git#egg=djangomarkup
 git+http://github.com/rpgplanet/django-avatar.git#egg=avatar
 
+-e git+http://github.com/rpgplanet/esus.git#egg=esus
+
 markdown2
 html5lib
 anyjson
