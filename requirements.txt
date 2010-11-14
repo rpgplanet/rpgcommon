@@ -18,13 +18,13 @@ paver
 # ella deps
 PIL
 
-git+http://github.com/Almad/sneakylang.git#egg=sneakylang
-git+http://github.com/Almad/python-czechtile.git#egg=czechtile
-git+http://github.com/rpgplanet/ella.git#egg=ella
-git+http://github.com/rpgplanet/django-markup.git#egg=djangomarkup
-git+http://github.com/rpgplanet/django-avatar.git#egg=avatar
+git+https://github.com/Almad/sneakylang.git#egg=sneakylang
+git+https://github.com/Almad/python-czechtile.git#egg=czechtile
+git+https://github.com/rpgplanet/ella.git#egg=ella
+git+https://github.com/rpgplanet/django-markup.git#egg=djangomarkup
+git+https://github.com/rpgplanet/django-avatar.git#egg=avatar
 
--e git+http://github.com/rpgplanet/esus.git#egg=esus
+-e git+https://github.com/rpgplanet/esus.git#egg=esus
 
 markdown2
 html5lib
