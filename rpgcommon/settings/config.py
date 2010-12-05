@@ -7,10 +7,17 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ENABLE_DEBUG_URLS = DEBUG
 
-DATABASE_ENGINE="mysql"
-DATABASE_NAME="rpgplanet"
-DATABASE_USER="developer"
-DATABASE_PASSWORD="xxx"
+DATABASES = {
+    'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'rpgplanet',
+            'USER' : 'developer',
+            'PASSWORD' : 'xxx',
+            'OPTIONS' : {
+                'init_command': 'SET storage_engine=INNODB',
+            }
+    }
+}
 
 FILE_ROOT = dirname(rpgcommon.__file__)
 
