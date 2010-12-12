@@ -16,6 +16,7 @@ mysql-python
 paver
 
 # ella deps
+python-memcached
 
 git+git://github.com/Almad/sneakylang.git#egg=sneakylang
 git+git://github.com/Almad/python-czechtile.git#egg=czechtile
