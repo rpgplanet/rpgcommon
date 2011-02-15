@@ -49,6 +49,10 @@ TEST_MEDIA_URL = "/test/media/"
 
 LOGGING_CONFIG_FILE = join(dirname(__file__), 'logging.ini')
 
+# external reusable apps settings
+POSTMAN_DISALLOW_ANONYMOUS = True
+POSTMAN_AUTO_MODERATE_AS = True
+
 DYNAMIC_RPGPLAYER_CATEGORIES = [
 #    {
 #        "tree_path" : "",

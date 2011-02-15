@@ -72,6 +72,12 @@ INSTALLED_APPS = (
 
     # awesomeness
     'djangomarkup',
+
+    # posts, notifications & friends
+    'pagination',
+    'notification',
+    'postman',
+
     'tagging',
     'avatar',
 
