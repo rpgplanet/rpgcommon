@@ -24,6 +24,12 @@ git+git://github.com/rpgplanet/ella.git#egg=ella
 git+git://github.com/rpgplanet/django-markup.git#egg=djangomarkup
 git+git://github.com/rpgplanet/django-avatar.git#egg=avatar
 
+git+git://github.com/rpgplanet/django-notification.git#egg=notification
+
+django-pagination
+git+git://github.com/rpgplanet/django-postman.git#egg=postman
+
+
 -e git+git://github.com/rpgplanet/esus.git#egg=esus
 
 markdown2
