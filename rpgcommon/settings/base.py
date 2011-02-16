@@ -25,9 +25,10 @@ USE_L10N = True
 ADMIN_MEDIA_PREFIX = '/static/admin_media/'
 
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
+    ('django.template.loaders.cached.Loader', (
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+    )),
 )
 
 ROOT_URLCONF = 'rpgcommon.urls'
@@ -57,6 +58,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.redirects',
+    'django.contrib.humanize',
 
     # ella-related
     'south',
